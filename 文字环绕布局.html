@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>矩形文字环绕</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 20px auto;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 被环绕的图片 */
+        .float-img {
+            float: left;
+            /* 左浮动，文字绕右侧；right 则绕左侧 */
+            width: 200px;
+            height: auto;
+            margin: 0 15px 10px 0;
+            /* 右、下间距，避免文字贴边 */
+            border-radius: 8px;
+        }
+
+        /* 清除浮动（可选，防止容器高度塌陷）  */
+        .container::after {
+            content: "fsfsafs";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./连绵不绝的群山风光图片.jpg" class="float-img" alt="示例图">
+        <p>CSS 文字环绕布局是网页设计中常用的排版方式，通过 float 属性可以轻松实现矩形元素的文字环绕效果。这种方式兼容性极佳，适用于大多数基础场景。
+            当元素设置 float: left 时，元素会向左浮动，文字自动填充右侧空间；设置 float: right 则相反。配合 margin 属性可以调整文字与元素之间的间距，提升排版美观度。
+            需要注意的是，浮动元素会脱离普通文档流，因此需要通过清除浮动（如伪元素 clear:
+            both）来避免容器高度塌陷的问题。神社在《日本三代实录》贞观元年2月11日（859年3月18日，天安3年）条中称为“宝宅神”，《延喜式神名帐》中称为“穗高神社”，意指穗高神的神社或位于穗高的神社，中世时称为三宫，有三座本殿，分别是大宫、南宫和若宫，天文18年（1549年）的《造宫定日记》题签则称为“穗高正一位五所大明神”。宽文9年（1669年），神社向松本藩自称为“安昙郡矢原庄穗高正一位大明神[注
+            1]”，二木干夫藏安政2年（1855年）的《安昙筑摩两郡村村明细调书上帐》则为“穗高大明神”[10][13]。</p>
+    </div>
+</body>
+
+</html>

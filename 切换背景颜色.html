@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 全局变量：默认背景色 */
+        :root {
+            --bg-color: #ffffff;
+            /* 白色 */
+        }
+
+        /* 切换后的背景色类 */
+        .dark-bg {
+            --bg-color: #333333;
+            /* 深灰色 */
+        }
+
+        /* 页面背景应用变量 */
+        body {
+            background-color: var(--bg-color);
+            transition: background-color 0.3s;
+            /* 切换时渐变过渡，更丝滑 */
+            min-height: 100vh;
+            /* 铺满整个页面 */
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="toggleBgColor()">点击切换背景颜色</button>
+    <script>
+        function toggleBgColor() {
+            document.documentElement.classList.toggle('dark-bg');
+        }
+    </script>
+</body>
+
+</html>

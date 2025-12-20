@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: white;
+            /* 阻止body背景传播 */
+        }
+
+        body {
+            height: 300px;
+            width: 400px;
+            background-color: #45B45B;
+            margin: 20px;
+            position: relative;
+            /* 添加margin看效果 */
+        }
+
+        /* 设置中间盒子的属性 */
+        .parent {
+            height: 174px;
+            width: 260px;
+            background-color: #194247;
+            position: absolute;
+            top: calc(50% - 87px);
+            left: calc(50% - 130px);
+            border-radius: 15px;
+        }
+
+        /*使用flex布局 设置中间盒子左三角三个点的属性 */
+        .box {
+            display: flex;
+        }
+
+        .box>div {
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            margin: 10px 10px;
+            background-color: #682463;
+        }
+
+
+        /* 分别设置每个点的属性 */
+        .box>div:nth-child(1) {
+            background-color: #45B45B;
+
+        }
+
+        .box>div:nth-child(2) {
+            background-color: #FABC0D;
+        }
+
+        .box>div:nth-child(3) {
+            background-color: #E3473C;
+        }
+
+        /* float浮动布局设计三条靠右对齐的三个图形条 */
+        .parent>div:nth-child(2) {
+            height: 20px;
+            width: 80px;
+            background-color: #FABC0D;
+            float: right;
+            margin: 5px 10px;
+        }
+
+        .parent>div:nth-child(3) {
+            height: 20px;
+            width: 120px;
+            background-color: #E3473C;
+            float: right;
+            margin: 5px 10px;
+            clear: both;
+        }
+
+
+        .parent>div:nth-child(4) {
+            height: 20px;
+            width: 160px;
+            background-color: #45B45B;
+            float: right;
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.baidu.com" method="post">
+        <label for="name">用户名:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label>性别:</label>
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">女</label><br>
+
+        <input type="checkbox" id="box" name="box" checked>
+        <label for="box">订阅推送信息</label><br>
+
+        <!-- 国家单选框 -->
+        <label for="country">国家:</label>
+        <select id="country" name="country">
+            <option value="中国">中国</option>
+            <option value="韩国">韩国</option>
+            <option value="美国" selected>美国</option>
+            <option value="英国">英国</option>
+            <option value="其它">其它</option>
+
+        </select><br>
+
+        <!-- 提交按钮 -->
+        <input type="submit" name="sub" value="提交"><br>
+
+
+    </form>
+</body>
+
+</html>

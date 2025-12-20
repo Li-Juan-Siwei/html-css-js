@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标滚轮缩放DIV</title>
+    <style>
+        #zoomContainer {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            overflow: hidden;
+            /* 防止缩放后内容溢出窗口 */
+        }
+
+        #zoomBox {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            /* 核心：设置变换原点为中心，缩放更符合直觉 */
+            transform-origin: center center;
+            /* 核心：应用缩放变换，初始为1倍 */
+            transform: scale(1);
+            transition: transform 0.08s ease-out;
+            /* 添加短暂过渡使缩放更平滑 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="zoomContainer">
+        <div id="zoomBox">
+            用鼠标滚轮缩放我！
+            <br>
+            当前缩放倍数: <span id="scaleValue">1.00</span>
+        </div>
+    </div>
+
+    <script>
+        const zoomBox = document.getElementById('zoomBox');
+        const scaleValueDisplay = document.getElementById('scaleValue');
+
+        // 1. 定义缩放变量和限制
+        let currentScale = 1;
+        const minScale = 0.2;   // 最小缩小到0.2倍
+        const maxScale = 5;     // 最大放大到5倍
+        const scaleStep = 0.1;  // 每次滚轮的缩放增量
+
+        // 2. 监听滚轮事件
+        zoomBox.addEventListener('wheel', function (event) {
+            // 阻止默认的页面滚动行为！！！
+            event.preventDefault();
+
+            // 3. 判断滚动方向并计算新缩放比例
+            // event.deltaY > 0 表示向下滚动（缩小），反之向上（放大）
+            let newScale;
+            if (event.deltaY > 0) {
+                newScale = currentScale - scaleStep; // 向下滚，缩小
+            } else {
+                newScale = currentScale + scaleStep; // 向上滚，放大
+            }
+
+            // 4. 限制缩放比例在合理范围内
+            newScale = Math.min(Math.max(newScale, minScale), maxScale);
+
+            // 5. 应用新的缩放比例
+            zoomBox.style.transform = `scale(${newScale})`;
+            currentScale = newScale;
+
+            // 6. 更新显示的数值（保留两位小数）
+            scaleValueDisplay.textContent = newScale.toFixed(2);
+        }, { passive: false }); // 必须设置 passive: false 才能 preventDefault
+    </script>
+</body>
+
+</html>

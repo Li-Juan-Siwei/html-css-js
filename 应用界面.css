@@ -1,0 +1,68 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid:
+    "nav header aside"
+    "nav main aside"
+    "nav footer aside";
+  gap: 10px;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 3% auto 3%;
+}
+
+.container > * {
+  background-color: #585858;
+}
+
+.header {
+  grid-area: header;
+}
+
+/* 设置header中图标的位置 */
+.search {
+  text-align: center;
+}
+
+.nav {
+  grid-area: nav;
+}
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}
+/* 设置右侧边栏靠右对齐*/
+.sidebar {
+  direction: rtl;
+}
+.sidebar > span {
+  unicode-bidi: isolate;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* 空间的图标向右对齐 */
+.nav > img {
+  float: right;
+}
+
+/* menu菜单flex布局 */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 设置menu菜单子元素的宽度 */
+.menu > div {
+  flex: 0 0 50%;
+}
+
+/* 页签的图标向右对齐 */
+.tabs > img {
+  float: right;
+}

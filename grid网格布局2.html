@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            gap: 20px;
+            background-color: grey;
+        }
+
+        .container>div {
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        .header {
+            grid-area: 1/1/1/4;
+        }
+
+        .menu {
+            grid-area: 2/1/4/1;
+        }
+
+        .area {
+            grid-area: 2/2/3/3;
+        }
+
+        .sidebar {
+            grid-area: 2/3/3/4;
+        }
+
+        .footer {
+            grid-area: 3/2/4/4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">头部</div>
+        <div class="menu">菜单</div>
+        <div class="area">内容区域</div>
+        <div class="sidebar">侧边栏</div>
+        <div class="footer">底部</div>
+    </div>
+</body>
+
+</html>

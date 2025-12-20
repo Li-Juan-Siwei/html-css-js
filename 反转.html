@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            direction: rtl;
+            /* 核心：父容器设为从右到左排列 */
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .parent span {
+            margin: 0 5px;
+            /* 可选：span 之间加间距 */
+            /* 可选：若文本出现反向（如英文），加 unicode-bidi: isolate 修正 */
+            unicode-bidi: isolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <!-- <img src="./svg/right_panel.svg" width="24" height="24"> -->
+        <span>日记</span>
+        <span>高亮</span>
+        <span>卡片库</span>
+        <span>大纲</span>
+        <span>AI</span>
+        <span>其它</span>
+    </div>
+
+
+</body>
+
+</html>

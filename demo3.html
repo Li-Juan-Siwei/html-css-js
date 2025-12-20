@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: #ffffff;
+        }
+
+        /* 设置背景区域大小 */
+        .container {
+            position: relative;
+            height: 300px;
+            width: 400px;
+            background-color: #C06C88;
+        }
+
+        /* 设置parent的大小和位置 */
+        .parent {
+            padding: 20px 10px 0px 20px;
+            display: grid;
+            height: 154px;
+            width: 240px;
+            gap: 10px;
+            background-color: #411C56;
+            position: absolute;
+            top: calc(50% - 77px);
+            left: calc(50% - 120px);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 77px;
+        }
+
+        /* 6个子盒子按照网格布局,且背景颜色相同 */
+        .parent>.heri {
+            background-color: #B7D7CD;
+            width: 60px;
+            height: 40px;
+        }
+
+        .parent>.vert {
+            background-color: #B7D7CD;
+            width: 40px;
+            height: 60px;
+        }
+
+        /* 最后一个向右对齐 */
+        .parent>div:nth-child(6) {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="heri"></div>
+            <div class="vert"></div>
+            <div class="heri"></div>
+            <div class="vert"></div>
+            <div class="heri"></div>
+            <div class="vert"></div>
+        </div>
+    </div>
+</body>
+
+</html>

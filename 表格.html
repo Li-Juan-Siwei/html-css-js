@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        caption {
+            caption-side: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th></th>
+                <th>这是头标题1</th>
+                <th>这是头标题2</th>
+                <th>这是头标题3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">第一行</th>
+                <td colspan="2">第一行第一列</td>
+                <td>第一行第三列</td>
+            </tr>
+            <tr>
+                <th scope="row">第二行</th>
+                <td rowspan="2">第二行第一列</td>
+                <td>第二行第二列</td>
+                <td>第二行第三列</td>
+            </tr>
+            <tr>
+                <th scope="row">第三行</th>
+
+                <td>第三行第二列</td>
+                <td>第三行第三列</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">合计</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+        <caption>
+            这是一个表格
+        </caption>
+    </table>
+</body>
+
+</html>

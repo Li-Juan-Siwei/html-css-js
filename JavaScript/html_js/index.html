@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js" defer></script> -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>我的 Web 页面</h1>
+    <p id="demo">一个段落</p>
+    <button type="button" onclick="myFun()">提交</button><br>
+    <a href="https://www.baidu.com">百度一下</a>
+
+    <script>
+        function myFun() {
+
+            let btnHtml = document.getElementsByTagName("button")[0];
+            if (btnHtml.innerHTML === "提交") {
+                btnHtml.innerHTML = "我第一个JS函数";
+            } else {
+                btnHtml.innerHTML = "提交";
+            }
+        }
+    </script>
+</body>
+
+</html>

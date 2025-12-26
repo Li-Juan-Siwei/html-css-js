@@ -1,0 +1,12 @@
+:root {
+  --main-color: #3498db;
+  --font-size: 20px;
+}
+
+h1 {
+  color: var(--main-color);
+}
+
+button {
+  font-size: var(--font-size);
+}

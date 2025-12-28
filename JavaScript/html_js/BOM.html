@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>这是一号标题</h1>
+    <p>
+        这是一段关于BOM(Browser Object
+        Model)的说明文字。BOM是浏览器对象模型，提供了与浏览器窗口交互的对象和方法。核心对象包括window、location、history、navigator和screen。window是全局对象，代表浏览器窗口；location包含当前URL信息；history管理浏览历史；navigator提供浏览器信息；screen包含用户屏幕信息。在Electron等桌面应用中，这些API同样适用，可用于窗口控制、页面导航等操作。了解BOM对前端开发至关重要。
+
+    </p>
+    <template id="myTemplate">
+        <div class="card">
+            <h2>Screen</h2>
+            <h2>sfsa</h2>
+        </div>
+    </template>
+
+
+    <script>
+        //在script标签前创建h2
+        const h2 = document.createElement('h2');
+        const script = document.querySelector('script');
+        document.body.insertBefore(h2, script);
+
+        // 实时获得窗口尺寸和高度
+        window.addEventListener('resize', function () {
+            h2.innerText = "高度:" + outerHeight + ",宽度:" + outerWidth;
+        })
+
+        const template = document.getElementById('myTemplate');
+        const clone = template.content.cloneNode(true);
+        document.body.insertBefore(clone, script);
+
+        // screen
+        const h2Screen = document.querySelectorAll('h2').item(1);
+        h2Screen.innerText = "可用的屏幕高度:" + screen.availHeight + ",可用的屏幕宽度:" + screen.availWidth;
+
+        // location
+        const h2Location = document.querySelectorAll('h2').item(2);
+        h2Location.innerText = "web 主机的域名:"
+
+
+        function createTemp() {
+            const temp = document.createElement('div');
+            temp.innerHTML = `
+            <p>主机的名称:<span>${location.hostname}</span></p>
+            <p>当前页面的路径和文件名:<span>${location.pathname}</span></p>
+            <p>web 主机的端口:<span>${location.port || '默认端口'}</span></p>
+            <p>所使用的 web 协议:<span>${location.protocol}</span></p>
+            <p>当前页面的 URL:<span>${location.href}</span></p>
+            `;
+            document.body.insertBefore(temp, script);
+        }
+
+        createTemp();
+
+        // 在script标签前插入HTML
+        const container = document.querySelector("script");
+
+        container.insertAdjacentHTML('beforebegin',
+            "<p>浏览器代号: " + navigator.appCodeName + "</p>" +
+            "<p>浏览器名称: " + navigator.appName + "</p>" +
+            "<p>浏览器版本: " + navigator.appVersion + "</p>" +
+            "<p>启用Cookies: " + navigator.cookieEnabled + "</p>" +
+            "<p>硬件平台: " + navigator.platform + "</p>" +
+            "<p>用户代理: " + navigator.userAgent + "</p>" +
+            "<p>用户代理语言: " + navigator.language + "</p>"
+        );
+
+        alert("警告弹窗!!!\n 点击确认");
+        confirm("确认弹窗!!!\n点击确认");
+        prompt("提示弹窗!!!\n点击确认");
+    </script>
+</body>
+
+</html>

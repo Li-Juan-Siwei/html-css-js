@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p>一段时间不断执行某个代码setInterval(),1秒循环计算2的n次方:<span></span> </p>
+<p>间隔多就多执行某个代码setTimeout(),1秒后执行x的10次方:<span></span> </p>
+
+<body>
+    <script>
+        // 全局变量保存状态
+        let x = 2;
+        let count = 1;
+
+        function calInter() {
+            x = 2 * x;
+            count++;
+            return "2的" + count + "次方结果是:" + x;
+        }
+
+        // 1s一直执行上面的代码
+        setInterval(() => {
+            const result = calInter();
+            document.querySelectorAll('span').item(0).innerHTML = result;
+        }, 1000);
+
+
+        function calTimer(x) {
+            const res = x;
+            for (let i = 2; i <= 10; i++) {
+                x = res * x;
+            }
+            // console.log(res + "的10次方结果是:" + x);
+            return res + "的10次方结果是:" + x;
+        }
+
+        //2s后执行上面的代码.
+        setTimeout(() => {
+            const result = calTimer(2);
+            document.querySelectorAll('span').item(1).innerHTML = result;
+        }, 2000);
+    </script>
+</body>
+
+</html>

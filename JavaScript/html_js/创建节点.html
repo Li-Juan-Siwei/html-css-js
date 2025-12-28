@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>这是一个段落!</p>
+        <p>这是另外一个段落!</p>
+        <p>这是一个新的段落!</p>
+    </div>
+
+    <script>
+        // 移除第一个p元素
+        const parent = document.querySelector('div');
+        const child = document.querySelectorAll('p');
+        // parent.removeChild(child.item(0));
+
+        // 将第二个元素替换为h1标题
+        const scdChild = child.item(1);
+        const h1 = document.createElement('h1');
+        h1.innerHTML = "这是替换后的h1标题"
+        parent.replaceChild(h1, scdChild);
+    </script>
+
+    <script>
+        // BOM对象
+    </script>
+</body>
+
+</html>

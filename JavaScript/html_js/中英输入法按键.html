@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.body.addEventListener('keydown', (e) => {
+            // 使用 key 属性，不依赖keyCode
+            const key = e.key;  // 'a' 或 'A'
+
+            if (key === '>' || key === '.' || key === '》' || key === '。') {
+                document.body.innerHTML = `按下了${key}键`
+            }
+        });
+    </script>
+</body>
+
+</html>

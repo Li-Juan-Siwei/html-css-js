@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="h1">这是标题1</h1>
+        <p>这是一个段落,你可以再发净空法师积分卡拉萨发啦凯撒激发拉卡萨发福建省考拉法基撒了咖啡机阿萨拉开发`颗粒剂弗利萨咖啡机拉胯生发剂考拉生发剂卢萨卡飞机考拉考虑付款了撒附件阿卡丽说法</p>
+
+        <img src="../../连绵不绝的群山风光图片.jpg">
+
+        <p>在这个数字时代，网络技术日新月异，前端开发已经成为构建现代互联网应用的核心技能之一。HTML作为网页的基础结构语言，与CSS和JavaScript共同构成了前端开发的三大基石。从简单的静态页面到复杂的单页应用，HTML的语义化标签为内容提供了清晰的层次结构，而CSS则负责将这些内容以美观的方式呈现给用户。JavaScript赋予了页面动态交互能力，使得用户可以与网页进行实时互动。这三者的完美结合创造了我们每天使用的各种网站和应用，从社交媒体平台到电子商务网站，从内容管理系统到数据可视化工具。随着Web组件化和模块化开发的普及，前端开发正变得越来越高效和可维护。
+        </p>
+
+        <input type="text" value="输入文本" onchange="console.log(this.value)"><br>
+        <button type="button">按钮</button>
+        <p id="clickP">点击这里</p>
+    </div>
+    <script>
+        // 设置背景颜色
+        const body = document.body;
+        body.style.backgroundColor = '#f8f8f8';
+
+        // 设置图片大小
+        document.querySelector("img").style.width = "200px";
+
+        // 设置点击按钮事件
+        document.querySelector('button').addEventListener("click", displaydDate);
+        function displaydDate() {
+            const h2 = document.createElement('h2');
+            document.querySelector('div').append(h2);
+            h2.innerHTML = Date();
+        }
+
+        // 点击最后一个p,弹出"hello JS!"
+        document.querySelector('#clickP').addEventListener("click", () => alert("hello JS !"));
+
+        // input中输入enter,就清空内容
+        document.querySelector('input').addEventListener("keydown", keyDown);
+        function keyDown(e) {
+            if (e.keyCode === 13) {
+                document.querySelector('input').value = "重新输入"
+            }
+        }
+    </script>
+</body>
+
+</html>
